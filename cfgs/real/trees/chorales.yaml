@@ -1,0 +1,11 @@
+dataset:
+  batching_strategy: samples
+  name: chorales
+  type: real_dataset_irreg
+logging:
+  save_dir: logs/real/chorales
+model:
+  max_relative_distance: 48
+  max_sequence_length: 86
+  regular_sampling: false
+  sequence_dim: 20

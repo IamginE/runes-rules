@@ -1,0 +1,11 @@
+dataset:
+  batching_strategy: random_start
+  name: amazon_purchases
+  type: real_dataset_irreg
+logging:
+  save_dir: logs/real/amazon_purchases
+model:
+  max_relative_distance: 20
+  max_sequence_length: 64
+  regular_sampling: false
+  sequence_dim: 993

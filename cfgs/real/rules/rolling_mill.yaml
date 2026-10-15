@@ -1,0 +1,38 @@
+dataset:
+  batching_strategy: samples
+  name: rolling_mill
+  type: real_dataset_reg
+logging:
+  name: rules
+  save_dir: logs/real/rolling_mill
+model:
+  decay_conjunction_temp: 0.90
+  decay_neuron_temp: 0.90
+  initial_temperature: 1.0
+  max_relative_distance: 64
+  max_sequence_length: 142
+  num_neurons: 500
+  num_rules: 200
+  only_full_window: false
+  regular_sampling: true
+  sequence_dim: 556
+  type: rules
+optimization:
+  batch_size: 64
+  lr_decay: 1.0
+  lr_patience: 0
+  max_epochs: 10000
+  num_lr_decreases: 0
+  optimizer:
+    kind: adam
+    params:
+      lr: 0.03
+  plateau_delta: 0.0
+  steps_temp_annealing: 32
+  warmup_epochs: 100
+  stop_annealing_conjunction: 0.00001
+  lambda_reg_int: 0.0
+discretization:
+  quantile_q: 0.90
+  inclusion_threshold: 0.90
+

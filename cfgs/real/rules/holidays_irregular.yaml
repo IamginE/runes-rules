@@ -1,0 +1,38 @@
+dataset:
+  batching_strategy: random_start
+  name: holidays_irregular
+  type: real_dataset_irreg
+logging:
+  name: rules
+  save_dir: logs/real/holidays_irregular
+model:
+  decay_conjunction_temp: 0.90
+  decay_neuron_temp: 0.90
+  initial_temperature: 1.0
+  max_relative_distance: 365
+  max_sequence_length: 12
+  num_neurons: 200
+  num_rules: 45
+  only_full_window: false
+  regular_sampling: false
+  sequence_dim: 14
+  type: rules
+optimization:
+  batch_size: 64
+  lr_decay: 1.0
+  lr_patience: 0
+  max_epochs: 4000
+  num_lr_decreases: 0
+  optimizer:
+    kind: adam
+    params:
+      lr: 0.03
+  plateau_delta: 0.0
+  steps_temp_annealing: 32
+  warmup_epochs: 100
+  stop_annealing_conjunction: 0.000001
+  lambda_reg_int: 0.0
+discretization:
+  quantile_q: 0.85
+  inclusion_threshold: 0.85
+

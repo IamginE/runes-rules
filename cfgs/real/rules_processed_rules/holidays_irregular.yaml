@@ -1,0 +1,25 @@
+dataset:
+  batching_strategy: random_start
+  name: holidays_irregular
+  type: real_dataset_irreg
+logging:
+  save_dir: logs/real/holidays_irregular
+model:
+  max_relative_distance: 365
+  max_sequence_length: 12
+  only_full_window: false
+  regular_sampling: false
+  sequence_dim: 14
+  type: rules_processed_rules
+optimization:
+  batch_size: 64
+  lr_decay: 0.3
+  lr_patience: 10
+  max_epochs: 1000
+  num_lr_decreases: 10
+  optimizer:
+    kind: adam
+    params:
+      lr: 0.03
+  plateau_delta: 0.01
+  warmup_epochs: 10

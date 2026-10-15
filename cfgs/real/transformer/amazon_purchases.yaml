@@ -1,0 +1,40 @@
+dataset:
+  batching_strategy: random_start
+  name: amazon_purchases
+  type: real_dataset_irreg
+logging:
+  name: transformer
+  save_dir: logs/real/amazon_purchases
+model:
+  activation: gelu
+  att_dim: 128
+  dropout: 0.1
+  embedding_dim: 128
+  final_nn_dim: 128
+  final_nn_num_layers: 2
+  max_relative_distance: 20
+  max_sequence_length: 64
+  num_heads: 4
+  only_full_window: false
+  regular_sampling: false
+  sequence_dim: 993
+  transformer_ff_nn_dim: 256
+  transformer_num_layers: 4
+  type: transformer
+optimization:
+  batch_size: 64
+  max_epochs: 1000
+  optimizer:
+    kind: adam
+    params:
+      lr: 0.0003
+  scheduler:
+    kind: on_plateau
+    params:
+      factor: 0.1
+      mode: min
+      patience: 10
+      threshold: 0.01
+      threshold_mode: abs
+
+

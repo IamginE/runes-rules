@@ -1,0 +1,11 @@
+dataset:
+  batching_strategy: random_start
+  name: commits
+  type: real_dataset_reg
+logging:
+  save_dir: logs/real/commits
+model:
+  max_relative_distance: 24
+  max_sequence_length: 64
+  regular_sampling: true
+  sequence_dim: 119

@@ -1,0 +1,7 @@
+dataset:
+  batching_strategy: samples
+  name: chorales
+  type: real_dataset_irreg
+model:
+  type: ppm_markov_model
+  sequence_dim: 20

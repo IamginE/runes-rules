@@ -1,0 +1,7 @@
+dataset:
+  batching_strategy: random_start
+  name: commits
+  type: real_dataset_reg
+model:
+  type: ppm_markov_model
+  sequence_dim: 119

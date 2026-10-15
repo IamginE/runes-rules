@@ -1,0 +1,11 @@
+dataset:
+  batching_strategy: samples
+  name: rolling_mill
+  type: real_dataset_reg
+logging:
+  save_dir: logs/real/rolling_mill
+model:
+  max_relative_distance: 64
+  max_sequence_length: 142
+  regular_sampling: true
+  sequence_dim: 556

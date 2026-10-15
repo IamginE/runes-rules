@@ -1,0 +1,20 @@
+name: runes
+channels:
+  - pytorch         # for PyTorch
+  - nvidia          # for Pytorch-cuda
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - pytorch
+  - pytorch-cuda=12.4
+  - lightning
+  - numpy
+  - pandas
+  - matplotlib
+  - tqdm
+  - holidays
+  - scikit-learn
+  - py-xgboost=*=cuda* # XGBoost
+  - catboost           # CatBoost
+  # - seaborn          # only used for plotting in src/plots.py

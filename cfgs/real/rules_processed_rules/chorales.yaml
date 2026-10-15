@@ -1,0 +1,25 @@
+dataset:
+  batching_strategy: samples
+  name: chorales
+  type: real_dataset_irreg
+logging:
+  save_dir: logs/real/chorales
+model:
+  max_relative_distance: 48
+  max_sequence_length: 86
+  only_full_window: false
+  regular_sampling: false
+  sequence_dim: 20
+  type: rules_processed_rules
+optimization:
+  batch_size: 30
+  lr_decay: 0.3
+  lr_patience: 10
+  max_epochs: 1000
+  num_lr_decreases: 10
+  optimizer:
+    kind: adam
+    params:
+      lr: 0.03
+  plateau_delta: 0.01
+  warmup_epochs: 10

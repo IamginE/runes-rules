@@ -1,0 +1,8 @@
+dataset:
+  batching_strategy: random_start
+  name: holidays_irregular
+  type: real_dataset_irreg
+model:
+  type: ppm_markov_model
+  sequence_dim: 14
+
