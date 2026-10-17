@@ -157,7 +157,7 @@ project
 ├── src                                            🠔 code
 |   | 
 |   ├── data
-|   |   ├── dataset_files/...                      🠔 saved real-world datasets, not including the Amazon dataset
+|   |   ├── dataset_files/...                      🠔 saved real-world datasets, not including the Rolling Mill and Amazon datasets
 |   |   ├── real_data.py                           🠔 parsing of real-world datasets and conversion into our data formats
 |   |   ├── synthetic_data.py                      🠔 synthetic data generation
 |   |   └── utils.py                               🠔 PyTorch dataset classes and algorithms for improving a symbolic rule set on given data
