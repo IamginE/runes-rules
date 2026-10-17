@@ -210,8 +210,16 @@ These are there to obtain baseline results.
 It is provided for documentation and is not required to run the code.
 
 ### Real-World Datasets
-We include dataset files in `src/data/dataset_files` except for the [Amazon dataset](https://www.nature.com/articles/s41597-024-03329-6), which is available at https://doi.org/10.7910/DVN/YGLYDY. 
-To run on the Amazon dataset, download `amazon-purchases.csv` and put it in the `src/data/dataset_files/` folder.
+We include dataset files in `src/data/dataset_files` except for the Rolling Mill dataset and the Amazon dataset.
+These can be obtained as follows:
+- **Rolling Mill:** The rolling mill dataset from [Discovering Sequential Patterns with Predictable Inter-event Delays](https://doi.org/10.1609/aaai.v38i8.28676) by Cüppers et al. (2024) can be downloaded from their [project page](https://eda.rg.cispa.io/prj/hopper/). To run on it, place `rolling-mill.dat` in `src/data/dataset_files/`.
+- **Amazon:** The Amazon dataset from [Open e-commerce 1.0, five years of crowdsourced U.S. Amazon purchase histories with user demographics](https://www.nature.com/articles/s41597-024-03329-6) by Berke et al. (2024) is available at https://doi.org/10.7910/DVN/YGLYDY. To run on it, download `amazon-purchases.csv` and place it in `src/data/dataset_files/`.
+
+
+**Included Datasets and Licenses:**
+- **Holidays:** Generated via the [holidays package](https://pypi.org/project/holidays/).
+- **Chorales:** [Bach Chorales](https://archive.ics.uci.edu/dataset/25/bach+chorales) by Darrell Conklin (https://doi.org/10.24432/C5GC7P), obtained from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode). Included unmodified.
+- **Commits:** Samba commit data from [Mining Periodic Patterns with a MDL Criterion](https://doi.org/10.1007/978-3-030-10928-8_32) by Galbrun et al. (2018), obtained from their [GitHub project](https://github.com/nurblageij/periodic-patterns-mdl) under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0); see `src/data/dataset_files/COMMITS_LICENSE`. Renamed (originally `commit_auth_data.dat`) and converted from `.dat` to `.txt`, otherwise unmodified.
 
 
 ## Example Usage (Minimal Reproduction)
@@ -234,7 +242,7 @@ To verify that the code runs correctly and reproduces the core behavior reported
     ```bash
     python src/data_generation.py
     ```
-    **Note:** The Amazon dataset is generated last and requires `amazon-purchases.csv` (see [Real-World Datasets](#real-world-datasets)). Without this file, the script fails at the end, after all other datasets have been generated.
+    **Note:** The Rolling Mill and Amazon datasets are generated last and require `rolling-mill.dat` and `amazon-purchases.csv`, respectively (see [Real-World Datasets](#real-world-datasets)). Without these files, the script fails at the end, after all other datasets have been generated.
 
 3. Train RULES on Holidays:
     ```bash
@@ -258,7 +266,7 @@ python src/data_generation.py
 ```
 If you wish to change directory names or paths, you can do so in this file. The other scripts will use the directories set here.
 
-**Note:** As in the minimal reproduction, `amazon-purchases.csv` has to be available (see [Real-World Datasets](#real-world-datasets)); otherwise, the script fails at the end, after all other datasets have been generated.
+**Note:** As in the minimal reproduction, `rolling-mill.dat` and `amazon-purchases.csv` have to be available (see [Real-World Datasets](#real-world-datasets)); otherwise, the script fails at the end, after all other datasets have been generated.
 
 
 Now you can run experiments on any of the synthetic, real-world, or random datasets. The scripts depend on each other's results as follows.
